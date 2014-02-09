@@ -6,6 +6,7 @@ NewPal::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'messages#index'
+  get '/twilio/process_sms' => 'messages#process_sms'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

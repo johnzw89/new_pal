@@ -1,9 +1,3 @@
-
-
-
-# put your own credentials here
-account_sid = ENV['account_sid']
-auth_token = ENV['auth_token']
-
-# # set up a client to talk to the Twilio REST API
-# @client = Twilio::REST::Client.new account_sid, auth_token
+CarterRails::Application.config.account_sid = "AC22d8ffad69bcce8c543e1dde5a46aa4f"
+CarterRails::Application.config.auth_token = "807b52cf01c1871a9977a7cad4c39b49"
+CarterRails::Application.config.phone_number = "19172424688"

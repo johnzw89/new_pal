@@ -4,10 +4,20 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-message_body = params["Body"]
+    require 'rubygems' # not necessary with ruby 1.9 but included for completeness 
+    require 'twilio-ruby' 
+     
+    # put your own credentials here 
+    message_body = params["Body"]
     from_number = params["From"]
  
-    SMSLogger.log_text_message from_number, message_body
+    SMSLogger.log_text_message from_number, message_body      
+  end
+
+  def process_sms
+    @city = params[:FromCity].capitalize
+    @state = params[:FromState]
+    render 'process_sms.xml.erb', :content_type => 'text/xml'
   end
 
   # GET /messages/1
