@@ -4,14 +4,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    require 'rubygems' # not necessary with ruby 1.9 but included for completeness 
-    require 'twilio-ruby' 
-     
-    # put your own credentials here 
-    message_body = params["Body"]
-    from_number = params["From"]
- 
-    SMSLogger.log_text_message from_number, message_body      
+  
   end
 
   def process_sms
